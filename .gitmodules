@@ -1,0 +1,3 @@
+[submodule "thirdparty/PSoC-W5100-Driver"]
+	path = thirdparty/PSoC-W5100-Driver
+	url = https://github.com/e2forlife/PSoC-W5100-Driver.git
