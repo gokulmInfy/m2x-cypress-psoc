@@ -8,12 +8,16 @@
 <files />
 <projects>
 <name_val_pair name="M2XCypressPSoC" v=".\M2XCypressPSoC.cydsn\M2XCypressPSoC.cyprj" />
+<name_val_pair name="E2ForLife_W5100" v="..\thirdparty\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100.cyprj" />
 </projects>
 <workspace_id v="d9b94ae3-1d6a-410a-be6c-37a086511190" />
 <WriteAppVersionLastSavedWith v="3.0.0.1539" />
 <WriteAppMarketingVersionLastSavedWith v="3.0 Component Pack 7" />
 <CyGuid_dcbd9771-0334-43dc-9cc3-fe99dc3c5316 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjDependencyList" version="3">
-<wrkspc_dependencies />
+<wrkspc_dependencies>
+<wrkspc_dependency project="M2XCypressPSoC" dependency="..\..\thirdparty\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100.cyprj" />
+<wrkspc_dependency project="M2XCypressPSoC" dependency="..\M2X.cylib\M2X.cyprj" />
+</wrkspc_dependencies>
 </CyGuid_dcbd9771-0334-43dc-9cc3-fe99dc3c5316>
 <CyGuid_63b68103-67f5-4406-8da6-5c8625765b82 type_name="CyDesigner.Common.ProjMgmt.Model.CyIgnoredSystemDepsList" version="1">
 <wrkspc_dependencies />
