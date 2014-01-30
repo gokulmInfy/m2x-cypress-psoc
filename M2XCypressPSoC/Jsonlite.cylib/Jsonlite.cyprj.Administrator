@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_7a7929f8-5e3b-4f86-a093-2d4ee6513111 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtProjectCustomData" version="1">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="47ec7058-2f43-4a2f-ae73-172624e235df">
+<CyGuid_47ec7058-2f43-4a2f-ae73-172624e235df type_name="CyDesigner.Common.ProjMgmt.Model.CyConfDepList" version="1">
+<boot_component v="" />
+<name v="cmpl_deps">
+<CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
+<dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0" xml_contents_version="2">
+<CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
+<file name=".\CortexM0\ARM_GCC_473\Debug\jsonlite.o">
+<dep name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite.c" />
+</file>
+<file name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite.c" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\jsonlite_builder.o">
+<dep name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_builder.c" />
+</file>
+<file name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_builder.c" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\jsonlite_parser.o">
+<dep name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_parser.c" />
+</file>
+<file name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_parser.c" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\jsonlite_stream.o">
+<dep name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_stream.c" />
+</file>
+<file name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_stream.c" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\jsonlite_token.o">
+<dep name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_token.c" />
+</file>
+<file name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_token.c" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\jsonlite_token_pool.o">
+<dep name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_token_pool.c" />
+</file>
+<file name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_token_pool.c" />
+</CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021>
+</dependency_info>
+</CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256>
+</name>
+<name v="lbry_deps">
+<CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
+<dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0" xml_contents_version="2">
+<CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
+<file name=".\CortexM0\ARM_GCC_473\Debug\Jsonlite.a">
+<dep name=".\CortexM0\ARM_GCC_473\Debug\jsonlite.o" />
+<dep name=".\CortexM0\ARM_GCC_473\Debug\jsonlite_builder.o" />
+<dep name=".\CortexM0\ARM_GCC_473\Debug\jsonlite_parser.o" />
+<dep name=".\CortexM0\ARM_GCC_473\Debug\jsonlite_stream.o" />
+<dep name=".\CortexM0\ARM_GCC_473\Debug\jsonlite_token.o" />
+<dep name=".\CortexM0\ARM_GCC_473\Debug\jsonlite_token_pool.o" />
+</file>
+</CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021>
+</dependency_info>
+</CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256>
+</name>
+</CyGuid_47ec7058-2f43-4a2f-ae73-172624e235df>
+</dataGuid>
+<dataGuid v="b0374e30-ce3a-47f2-ad85-821643292c68">
+<CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68 type_name="CyDesigner.Common.ProjMgmt.Common.CyCmdLineData" version="2">
+<genericCmdLineData>
+<name v="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0">
+<name_val_pair name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite.c" v="&quot;-I. &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;&quot;-I${ProjectDir}/../../thirdparty/jsonlite/jsonlite/include &quot;" />
+<name_val_pair name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_builder.c" v="&quot;-I. &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;&quot;-I${ProjectDir}/../../thirdparty/jsonlite/jsonlite/include &quot;" />
+<name_val_pair name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_parser.c" v="&quot;-I. &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;&quot;-I${ProjectDir}/../../thirdparty/jsonlite/jsonlite/include &quot;" />
+<name_val_pair name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_stream.c" v="&quot;-I. &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;&quot;-I${ProjectDir}/../../thirdparty/jsonlite/jsonlite/include &quot;" />
+<name_val_pair name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_token.c" v="&quot;-I. &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;&quot;-I${ProjectDir}/../../thirdparty/jsonlite/jsonlite/include &quot;" />
+<name_val_pair name="..\..\thirdparty\jsonlite\jsonlite\src\jsonlite_token_pool.c" v="&quot;-I. &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;&quot;-I${ProjectDir}/../../thirdparty/jsonlite/jsonlite/include &quot;" />
+<name_val_pair name="F:\m2x\cypress\m2x-cypress-psoc\M2XCypressPSoC\Jsonlite.cylib\CortexM0\ARM_GCC_473\Debug\Jsonlite.a" v="&quot;-rs &quot;&quot;.\CortexM0\ARM_GCC_473\Debug\Jsonlite.a &quot;&quot;F:\m2x\cypress\m2x-cypress-psoc\M2XCypressPSoC\Jsonlite.cylib\CortexM0\ARM_GCC_473\Debug\jsonlite.o &quot;&quot;F:\m2x\cypress\m2x-cypress-psoc\M2XCypressPSoC\Jsonlite.cylib\CortexM0\ARM_GCC_473\Debug\jsonlite_builder.o &quot;&quot;F:\m2x\cypress\m2x-cypress-psoc\M2XCypressPSoC\Jsonlite.cylib\CortexM0\ARM_GCC_473\Debug\jsonlite_parser.o &quot;&quot;F:\m2x\cypress\m2x-cypress-psoc\M2XCypressPSoC\Jsonlite.cylib\CortexM0\ARM_GCC_473\Debug\jsonlite_stream.o &quot;&quot;F:\m2x\cypress\m2x-cypress-psoc\M2XCypressPSoC\Jsonlite.cylib\CortexM0\ARM_GCC_473\Debug\jsonlite_token.o &quot;&quot;F:\m2x\cypress\m2x-cypress-psoc\M2XCypressPSoC\Jsonlite.cylib\CortexM0\ARM_GCC_473\Debug\jsonlite_token_pool.o &quot;" />
+</name>
+</genericCmdLineData>
+<codeGenCmdLineTag v="" />
+</CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<properties />
+</CyGuid_7a7929f8-5e3b-4f86-a093-2d4ee6513111>
+</CyXmlSerializer>

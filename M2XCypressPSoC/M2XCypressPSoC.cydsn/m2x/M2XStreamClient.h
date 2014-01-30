@@ -111,6 +111,23 @@ public:
                    const char* names[], const int counts[],
                    const char* ats[], T values[]);
 
+  // Fetch values for a particular data stream. Since memory is
+  // very limited on an Arduino, we cannot parse and get all the
+  // data points in memory. Instead, we use callbacks here: whenever
+  // a new data point is parsed, we call the callback using the values,
+  // after that, the values will be thrown away to make space for new
+  // values.
+  // Note that you can also pass in a user-specified context in this
+  // function, this context will be passed to the callback function
+  // each time we get a data point.
+  // For each data point, the callback will be called once. The HTTP
+  // status code will be returned. And the content is only parsed when
+  // the status code is 200.
+  int fetchValues(const char* feedId, const char* streamName,
+                  stream_value_read_callback callback, void* context,
+                  const char* startTime = NULL, const char* endTime = NULL,
+                  const char* limit = NULL);
+
   // Update datasource location
   // NOTE: On an Arduino Uno and other ATMEGA based boards, double has
   // 4-byte (32 bits) precision, which is the same as float. So there's
@@ -128,6 +145,12 @@ public:
   template <class T>
   int updateLocation(const char* feedId, const char* name,
                      T latitude, T longitude, T elevation);
+
+  // Read location information for a feed. Also used callback to process
+  // data points for memory reasons. The HTTP status code is returned,
+  // response is only parsed when the HTTP status code is 200
+  int readLocation(const char* feedId, location_read_callback callback,
+                   void* context);
 private:
   Client* _client;
   const char* _key;
@@ -143,6 +166,13 @@ private:
   // Writes HTTP header lines including M2X API Key, host, content
   // type and content length(if the body exists)
   void writeHttpHeader(int contentLength);
+  // Parses HTTP response header and return the content length.
+  // Note that this function does not parse all http headers, as long
+  // as the content length is found, this function will return
+  int readContentLength();
+  // Skips all HTTP response header part. Return minus value in case
+  // the connection is closed before we got all headers
+  int skipHttpHeader();
   // Parses and returns the HTTP status code, note this function will
   // return immediately once it gets the status code
   int readStatusCode(bool closeClient);
@@ -152,6 +182,12 @@ private:
   int waitForString(const char* str);
   // Closes the connection
   void close();
+  // Parses JSON response of stream value API, and calls callback function
+  // once we get a data point
+  int readStreamValue(stream_value_read_callback callback, void* context);
+  // Parses JSON response of location API, and calls callback function once
+  // we get a data point
+  int readLocation(location_read_callback callback, void* context);
 };
 
 #include "M2XStreamClient_template.h"
