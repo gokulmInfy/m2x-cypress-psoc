@@ -19,7 +19,8 @@ public:
   size_t println(double n, int digits = 2);
   size_t println();
 
-  virtual size_t write(uint8_t c) = 0;
+  /* Dummy implementation to prevent this class from being pure virutal */
+  virtual size_t write(uint8_t c) { return -1; }
   virtual size_t write(const uint8_t* buf, size_t size);
 };
 

@@ -1,7 +1,13 @@
 #include "Client.h"
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include <project.h>
 #include <stdint.h>
+#ifdef __cplusplus
+}
+#endif
 
 Client::Client() : _len(0), _socket(0xFF) {
 }
