@@ -1,5 +1,5 @@
 # M2XCypressPSoC
-# 2014-02-11 12:14:50Z
+# 2014-02-11 12:21:57Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2

@@ -1443,29 +1443,29 @@ uint16
 ETH0_TcpReceive( uint8 socket, uint8* buffer, uint16 length )
 {
 	uint16 RxSize;
-	
+
 	/*
 	 * First thing to do is to check to see if the socket is connected
 	 * and that there is data waiting
 	 */
 	RxSize = 0;
-		/*
-		 * read the number of waiting bytes in the buffer memory
-		 * but, clip the length of data read to the requested
-		 * length of data.
-		 */
-		RxSize = ETH0_GetRxSize( socket );
-		RxSize = (RxSize > length) ? length : RxSize;
-		/* If there was waiting data, read it from the buffer */
-		if (RxSize > 0) {
-			ETH0_ProcessRxData( socket, 0, buffer, RxSize, 0);
-			/* 
-			 * after reading the buffer data, send the receive command
-			 * to the socket so that the W5100 completes the read
-			 */
-			ETH0_ExecuteSocketCommand(socket, 0x40);
-		}
-	
+  /*
+   * read the number of waiting bytes in the buffer memory
+   * but, clip the length of data read to the requested
+   * length of data.
+   */
+  RxSize = ETH0_GetRxSize( socket );
+  RxSize = (RxSize > length) ? length : RxSize;
+  /* If there was waiting data, read it from the buffer */
+  if (RxSize > 0) {
+    ETH0_ProcessRxData( socket, 0, buffer, RxSize, 0);
+    /* 
+     * after reading the buffer data, send the receive command
+     * to the socket so that the W5100 completes the read
+     */
+    ETH0_ExecuteSocketCommand(socket, 0x40);
+  }
+
 	/* return the number of read bytes from the buffer memory */
 	return RxSize;
 }
