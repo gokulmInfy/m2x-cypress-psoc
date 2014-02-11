@@ -22,8 +22,6 @@ public:
   virtual uint8_t connected();
 private:
   virtual int read(uint8_t *buf, size_t size);
-  uint8_t _buf[1];
-  uint8_t _len;
   uint8_t _socket;
 };
 

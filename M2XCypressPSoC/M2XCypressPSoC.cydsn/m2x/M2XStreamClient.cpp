@@ -5,7 +5,7 @@
 #include "StreamParseFunctions.h"
 #include "LocationParseFunctions.h"
 
-const char* M2XStreamClient::kDefaultM2XHost = "api-m2x.att.com";
+const char* M2XStreamClient::kDefaultM2XHost = "54.214.25.232";
 
 int print_encoded_string(Print* print, const char* str);
 int tolower(int ch);

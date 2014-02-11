@@ -42,7 +42,7 @@
 #define SPI0_REMOVE_SPI_MASTER_PINS         (0u)
 #define SPI0_REMOVE_SPI_SLAVE_PINS          (1u)
 #define SPI0_REMOVE_SPI_MASTER_SS0_PIN      (0u)
-#define SPI0_REMOVE_SPI_MASTER_SS1_PIN      (1u)
+#define SPI0_REMOVE_SPI_MASTER_SS1_PIN      (0u)
 #define SPI0_REMOVE_SPI_MASTER_SS2_PIN      (1u)
 #define SPI0_REMOVE_SPI_MASTER_SS3_PIN      (1u)
 #define SPI0_REMOVE_UART_TX_PIN             (1u)

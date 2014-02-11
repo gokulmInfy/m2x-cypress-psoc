@@ -23,6 +23,8 @@
 #include <SPI0_PINS.h>
 #include <SPI0_SPI_UART_PVT.h>
 #include <SPI0_PVT.h>
+#include <SDCS.h>
+#include <SDCS_aliases.h>
 #include <ETH0.h>
 #include <SPI0_ss0_m.h>
 #include <SPI0_ss0_m_aliases.h>
@@ -32,6 +34,8 @@
 #include <SPI0_miso_m_aliases.h>
 #include <SPI0_sclk_m.h>
 #include <SPI0_sclk_m_aliases.h>
+#include <SPI0_ss1_m.h>
+#include <SPI0_ss1_m_aliases.h>
 #include <SPI0_SCBCLK.h>
 #include <core_cm0_psoc4.h>
 #include <core_cm0.h>

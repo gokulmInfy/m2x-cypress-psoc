@@ -49,7 +49,7 @@ typedef struct
 static ETH0_SOCKET ETH0_SocketConfig[4];
 static uint32 ETH0_SubnetMask;
 
-static uint8 ETH0_MAC[6] = { 0x00, 0xDE, 0xAD, 0xBE, 0xEF, 0x00 };
+static uint8 ETH0_MAC[6] = { 0x90, 0xA2, 0xDA, 0x0E, 0xC2, 0xAD };
 
 
 /* ======================================================================== */
@@ -182,16 +182,16 @@ uint8 ETH0_W51_Read(uint16 addr)
 #include <SPI0_SPI_UART.h>
 
 /* V1.1 : Include the header for the select pin used. */
-#if (0 == 0)
+#if (1 == 0)
 #include <SPI0_ss0_m.h>
 #define ETH0_SpiDone    (SPI0_ss0_m_Read())
-#elif (0 == 1)
+#elif (1 == 1)
 #include <SPI0_ss1_m.h>
 #define ETH0_SpiDone    (SPI0_ss1_m_Read())
-#elif (0 == 2)
+#elif (1 == 2)
 #include <SPI0_ss2_m.h>
 #define ETH0_SpiDone    (SPI0_ss2_m_Read())
-#elif (0 == 3)
+#elif (1 == 3)
 #include <SPI0_ss3_m.h>
 #define ETH0_SpiDone    (SPI0_ss3_m_Read())
 #else
@@ -207,13 +207,13 @@ uint8 ETH0_W51_Read(uint16 addr)
  */
 static void ETH0_W51_Select( void )
 {
-#if (0 == 0)
+#if (1 == 0)
 	SPI0_SpiSetActiveSlaveSelect( SPI0_SPIM_ACTIVE_SS0 );
-#elif (0 == 1)
+#elif (1 == 1)
 	SPI0_SpiSetActiveSlaveSelect( SPI0_SPIM_ACTIVE_SS1 );
-#elif (0 == 2)
+#elif (1 == 2)
 	SPI0_SpiSetActiveSlaveSelect( SPI0_SPIM_ACTIVE_SS2 );
-#elif (0 == 3)
+#elif (1 == 3)
 	SPI0_SpiSetActiveSlaveSelect( SPI0_SPIM_ACTIVE_SS3 );
 #else
 		SPI0_SpiSetActiveSlaveSelect(0);
@@ -1099,7 +1099,7 @@ ETH0_Start( void )
 		
 	/* wait for power on PLL Lock */
 	CyDelay( 10 );
-	ip = ETH0_ParseIP("10.0.0.45");
+	ip = ETH0_ParseIP("10.0.0.43");
 	sub = ETH0_ParseIP("255.255.255.0");
 	gateway = ETH0_ParseIP("10.0.0.1");
 	/* Initialize the device with the default data */
@@ -1449,7 +1449,6 @@ ETH0_TcpReceive( uint8 socket, uint8* buffer, uint16 length )
 	 * and that there is data waiting
 	 */
 	RxSize = 0;
-	if (ETH0_GetSocketStatus( socket ) == 0x17) {
 		/*
 		 * read the number of waiting bytes in the buffer memory
 		 * but, clip the length of data read to the requested
@@ -1466,7 +1465,6 @@ ETH0_TcpReceive( uint8 socket, uint8* buffer, uint16 length )
 			 */
 			ETH0_ExecuteSocketCommand(socket, 0x40);
 		}
-	}
 	
 	/* return the number of read bytes from the buffer memory */
 	return RxSize;

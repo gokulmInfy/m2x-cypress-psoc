@@ -9,23 +9,19 @@ extern "C" {
 }
 #endif
 
-Client::Client() : _len(0), _socket(0xFF) {
+Client::Client() : _socket(0xFF) {
 }
 
 Client::~Client() {
 }
 
 int Client::connect(const char *host, uint16_t port) {
-  uint32_t ip;
+  int status;
 
-  ip = ETH0_ParseIP(host);
-  if ((ip == 0xFFFFFFFF) || (ip == 0)) {
-    return 0;
-  }
-
-  _socket = ETH0_TcpOpen(12345);
-  ETH0_TcpConnect(_socket, ip, port);
-  return 1;
+  _socket = ETH0_TcpOpen(12344);
+  ETH0_TcpConnect(_socket, ETH0_ParseIP(host), port);
+  status = ETH0_TcpConnected(_socket);
+  return status;
 }
 
 size_t Client::write(uint8_t b) {
@@ -37,17 +33,16 @@ size_t Client::write(const uint8_t *buf, size_t size) {
 }
 
 int Client::available() {
-  if (_len > 0) { return 1; }
-  int ret = read(_buf, 1);
-  if (ret <= 0) { return 0; }
-  _len = ret;
-  return 1;
+  int len = ETH0_SocketRxDataWaiting(_socket);
+  return len > 0;
 }
 
 int Client::read() {
-  if (_len > 0) {
-    _len = 0;
-    return _buf[0];
+  uint8_t buf;
+  int ret = read(&buf, 1);
+
+  if (ret > 0) {
+    return buf;
   }
   return -1;
 }

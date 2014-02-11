@@ -97,6 +97,12 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI0_sclk_m_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI0_SCBCLK.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI0_SCBCLK.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI0_ss1_m.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI0_ss1_m.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPI0_ss1_m_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SDCS.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SDCS.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SDCS_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\prebuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\postbuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\CyElfTool.exe</File>

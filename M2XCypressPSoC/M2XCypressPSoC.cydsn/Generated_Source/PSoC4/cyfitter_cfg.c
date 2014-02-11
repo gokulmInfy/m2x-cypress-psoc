@@ -198,25 +198,25 @@ static void ClockSetup(void)
 	CY_SET_REG32((void CYXDATA *)(CYREG_CLK_SELECT), (CY_GET_REG32((void *)CYREG_CLK_SELECT) | 0x00040000u));
 
 	/* Trim IMO BG based on desired frequency. */
-	SetIMOBGTrims(24u);
+	SetIMOBGTrims(48u);
 
-	/* Going less than or equal to 24MHz, so update the clock speed then adjust trim value. */
-	CY_SET_REG32((void CYXDATA *)(CYREG_CLK_IMO_TRIM2), (25u));
-	CyDelayCycles(5u);
-	CY_SET_REG32((void CYXDATA *)(CYREG_CLK_IMO_TRIM1), (CY_GET_REG8((void *)CYREG_SFLASH_IMO_TRIM21)));
+	/* Going faster than 24MHz, so update trim value then adjust to new clock speed. */
+	CY_SET_REG32((void CYXDATA *)(CYREG_CLK_IMO_TRIM1), (CY_GET_REG8((void *)CYREG_SFLASH_IMO_TRIM45)));
 	CyDelayUs(5u);
-
-	/* Disable HALF_EN since it is not required at this IMO frequency. */
-	CY_SET_REG32((void CYXDATA *)(CYREG_CLK_SELECT), (CY_GET_REG32((void *)CYREG_CLK_SELECT) & 0xFFFBFFFFu));
+	CY_SET_REG32((void CYXDATA *)(CYREG_CLK_IMO_TRIM2), (53u));
 
 	/* CYDEV_CLK_SELECT00 Starting address: CYDEV_CLK_SELECT00 */
 	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_SELECT02), 0x00000010u);
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_SELECT03), 0x00000010u);
 
 	/* CYDEV_CLK_IMO_CONFIG Starting address: CYDEV_CLK_IMO_CONFIG */
 	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_IMO_CONFIG), 0x80000000u);
 
 	/* CYDEV_CLK_ILO_CONFIG Starting address: CYDEV_CLK_ILO_CONFIG */
 	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_ILO_CONFIG), 0x80000000u);
+
+	/* CYDEV_CLK_SELECT Starting address: CYDEV_CLK_SELECT */
+	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_SELECT), 0x00040000u);
 
 	/* CYDEV_CLK_DIVIDER_A00 Starting address: CYDEV_CLK_DIVIDER_A00 */
 	CY_SET_XTND_REG32((void CYFAR *)(CYREG_CLK_DIVIDER_A00), 0x80000000u);
@@ -295,15 +295,19 @@ void cyfitter_cfg(void)
 		}
 
 		/* HSIOM Starting address: CYDEV_HSIOM_BASE */
-		CY_SET_XTND_REG32((void CYFAR *)(CYREG_HSIOM_PORT_SEL3), 0x0000EE00u);
-		CY_SET_XTND_REG32((void CYFAR *)(CYREG_HSIOM_PORT_SEL4), 0x0000FFFFu);
+		CY_SET_XTND_REG32((void CYFAR *)(CYDEV_HSIOM_BASE), 0xFF000000u);
+		CY_SET_XTND_REG32((void CYFAR *)(CYREG_HSIOM_PORT_SEL3), 0x000FEEFFu);
+
+		/* IOPINS0_0 Starting address: CYDEV_PRT0_DR */
+		CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT0_DR), 0x000000C1u);
+		CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT0_PC), 0x00D80006u);
 
 		/* IOPINS0_3 Starting address: CYDEV_PRT3_DR */
-		CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT3_PC), 0x00000D80u);
+		CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT3_DR), 0x00000011u);
+		CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT3_PC), 0x00006D8Eu);
 
-		/* IOPINS0_4 Starting address: CYDEV_PRT4_DR */
-		CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT4_DR), 0x0000000Du);
-		CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT4_PC), 0x00000D8Eu);
+		/* UDB_PA_0 Starting address: CYDEV_UDB_PA0_BASE */
+		CY_SET_XTND_REG32((void CYFAR *)(CYDEV_UDB_PA0_BASE), 0x00990000u);
 
 		/* UDB_PA_3 Starting address: CYDEV_UDB_PA3_BASE */
 		CY_SET_XTND_REG32((void CYFAR *)(CYDEV_UDB_PA3_BASE), 0x00990000u);
