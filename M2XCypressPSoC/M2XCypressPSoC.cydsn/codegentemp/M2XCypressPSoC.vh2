@@ -2,7 +2,7 @@
 --	Conversion of M2XCypressPSoC.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Tue Feb 11 20:21:56 2014
+--	Mon Feb 17 20:14:43 2014
 --
 
 USE cypress.cypress.all;

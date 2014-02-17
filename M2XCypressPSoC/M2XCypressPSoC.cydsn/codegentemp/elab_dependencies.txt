@@ -356,11 +356,11 @@ C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives
 C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.c
 C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\pins.h
 C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v1_90\PSoC4\API\aliases.h
-F:\m2x\cypress\m2x-cypress-psoc\thirdparty\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1\E2ForLife_W5100_v1_1.cysym
-F:\m2x\cypress\m2x-cypress-psoc\thirdparty\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1\E2ForLife_W5100_v1_1.pdf
-F:\m2x\cypress\m2x-cypress-psoc\thirdparty\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1
-F:\m2x\cypress\m2x-cypress-psoc\thirdparty\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1\API\W5100.c
-F:\m2x\cypress\m2x-cypress-psoc\thirdparty\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_1\API\W5100.h
+F:\m2x\cypress\m2x-cypress-psoc\thirdparty\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\E2ForLife_W5100_v1_2.cysym
+F:\m2x\cypress\m2x-cypress-psoc\thirdparty\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\E2ForLife_W5100_v1_2.pdf
+F:\m2x\cypress\m2x-cypress-psoc\thirdparty\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2
+F:\m2x\cypress\m2x-cypress-psoc\thirdparty\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\API\W5100.c
+F:\m2x\cypress\m2x-cypress-psoc\thirdparty\PSoC-W5100-Driver\E2ForLife_W5100.cylib\E2ForLife_W5100_v1_2\API\W5100.h
 F:\m2x\cypress\m2x-cypress-psoc\M2XCypressPSoC\M2XCypressPSoC.cydsn\M2XCypressPSoC.cydwr
 C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\cm0gcc.ld
 C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v4_0\PSoC4\API\Cm0RealView.scat
