@@ -1,9 +1,9 @@
 Cypress PSOC M2X API Client
 ========================
 
-The Cypress PSoC client library is used to send/receive data to/from [AT&amp;T's M2X service](https://m2x.att.com/) from a [Cypress PSoC 4 board](http://cypress.com/go/CY8CKIT-042). In order to let the PSoC 4 board connect to the Internet, an [Arduino Ethernet shield](http://arduino.cc/en/Main/ArduinoEthernetShield) should be attached to the Cypress PSoC 4 board.
+The Cypress PSoC client library is used to send/receive data to/from [AT&amp;T's M2X service](https://m2x.att.com/) from a [Cypress PSoC 4 board](http://cypress.com/go/CY8CKIT-042). In order to allow the PSoC 4 board to connect to the Internet, an [Arduino Ethernet shield](http://arduino.cc/en/Main/ArduinoEthernetShield) should be attached to the Cypress PSoC 4 board.
 
-**NOTE**: By default, the J12 headers on the Cypress PSoC 4 board are unpopulated. In order to use the Arduino Ethernet shield and run the library, those headers must be populated. By populating, we mean that those headers must be [soldered](https://learn.sparkfun.com/tutorials/how-to-solder---through-hole-soldering) using some [Break Away Headers](https://www.sparkfun.com/products/116). Otherwise the Ethernet shield will not function.
+**NOTE**: By default, the J12 headers on the Cypress PSoC 4 board are unpopulated. In order to use the Arduino Ethernet shield and run the library, those headers must be populated. By populating, we mean that those headers must be [soldered](https://learn.sparkfun.com/tutorials/how-to-solder---through-hole-soldering) using some [Break Away Headers](https://www.sparkfun.com/products/116). Otherwise, the Ethernet shield will not function.
 
 Getting Started
 ==========================
@@ -27,17 +27,17 @@ $ git submodule update --init
 
 The code is grouped as a [Cypress PSoC Creator](http://www.cypress.com/psoccreator/) project. You need at least PSoC Creator 3 to open the project.
 
-When you have the PSoC Creator 3 installed, open the workspace at `M2XCypressPSoC/M2XCypressPSoC.cywrk`, you can find 3 projects available:
+When you have the PSoC Creator 3 installed, open the workspace at `M2XCypressPSoC/M2XCypressPSoC.cywrk`, you can find three (3) projects available:
 
 * `E2ForLife_W5100`: The library used to manipulate the Arduino Ethernet library, which gives us Internet access
-* `Jsonlite`: Json parser used in our library
-* `M2XCypressPSoC`: Sample project with M2X library packed. This sample project can be used to post values to a stream in a feed.
+* `Jsonlite`: A JSON parser used in our library
+* `M2XCypressPSoC`: A sample project with M2X library packed. This sample project can be used to post values to a stream in a feed.
 
-Since the M2X library depends on the generated code from hardware configuration in PSoC Creator, we now pack the library in the sample project. In the future we might split M2X library files in its own project.
+Because the M2X library depends on the generated code from the hardware configuration in the PSoC Creator, we now pack the library in the sample project. In the future, the M2X library files might be split into their own project.
 
-In `main.cpp` file, you need to configure your AT&amp;T M2X master key, the feed and stream to use in order to run the example. When you are done with the changes, you are ready to build and run the example.
+In the `main.cpp` file, you'll need to configure your AT&amp;T M2X master key, the feed and stream to use in order to run the example. When you are done with the changes, you are ready to build and run the example.
 
-Right click on `M2XCypressPSoC` project, and select `Build M2XCypressPSoC`, the PSoC Creator will build all 3 projects, since `M2XCypressPSoC` depends on the other two. When the building process is completed, you can connect your PSoC 4 board using a USB cable, and select `Debug` to run the example on your board.
+Right click on `M2XCypressPSoC` project, and select `Build M2XCypressPSoC` — the PSoC Creator will build all three (3) projects, because `M2XCypressPSoC` depends on the other two. When the building process is completed, you can connect your PSoC 4 board using a USB cable, and select `Debug` to run the example on your board.
 
 Floating Point Support
 ======================
