@@ -1,6 +1,8 @@
 Cypress PSOC M2X API Client
 ========================
 
+**NOTE**: We've [changed](https://github.com/attm2x/m2x-cypress-psoc/commit/cbf291d11745fd1c6f3f0b00bd59ea4cab6d8279) one API function to avoid ambiguity. If you are using the older version of library, chances are you might need to fix your existing code to run with the current library.
+
 The Cypress PSoC client library is used to send/receive data to/from [AT&amp;T's M2X service](https://m2x.att.com/) from a [Cypress PSoC 4 board](http://cypress.com/go/CY8CKIT-042). In order to allow the PSoC 4 board to connect to the Internet, an [Arduino Ethernet shield](http://arduino.cc/en/Main/ArduinoEthernetShield) should be attached to the Cypress PSoC 4 board.
 
 **NOTE**: By default, the J12 headers on the Cypress PSoC 4 board are unpopulated. In order to use the Arduino Ethernet shield and run the library, those headers must be populated. By populating, we mean that those headers must be [soldered](https://learn.sparkfun.com/tutorials/how-to-solder---through-hole-soldering) using some [Break Away Headers](https://www.sparkfun.com/products/116). Otherwise, the Ethernet shield will not function.
