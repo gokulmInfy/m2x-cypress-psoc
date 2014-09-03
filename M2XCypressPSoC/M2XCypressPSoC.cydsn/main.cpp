@@ -11,8 +11,8 @@ extern "C" {
 #include "m2x/Client.h"
 #include "m2x/M2XStreamClient.h"
 
-char feedId[] = "<feed id>"; // Feed you want to post to
-char streamName[] = "<stream name>"; // Stream you want to post to
+char feedId[] = "<feed id>"; // Feed you want to push to
+char streamName[] = "<stream name>"; // Stream you want to push to
 char m2xKey[] = "<m2x api key>"; // Your M2X API Key or Master API Key
 
 int main()
@@ -35,7 +35,7 @@ int main()
   for(;;)
   {
     /* Place your application code here. */
-    int response = m2xClient.post(feedId, streamName, 42);
+    int response = m2xClient.put(feedId, streamName, 42);
     if (response == -1) {
       /* Error occurs */
       response = response;
