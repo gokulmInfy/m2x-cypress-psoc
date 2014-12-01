@@ -35,7 +35,7 @@ int main()
   for(;;)
   {
     /* Place your application code here. */
-    int response = m2xClient.put(feedId, streamName, 42);
+    int response = m2xClient.updateStreamValue(feedId, streamName, 42);
     if (response == -1) {
       /* Error occurs */
       response = response;
