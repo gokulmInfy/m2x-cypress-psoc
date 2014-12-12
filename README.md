@@ -33,11 +33,11 @@ When you have the PSoC Creator 3 installed, open the workspace at `M2XCypressPSo
 
 * `E2ForLife_W5100`: The library used to manipulate the Arduino Ethernet library, which gives us Internet access
 * `Jsonlite`: A JSON parser used in our library
-* `M2XCypressPSoC`: A sample project with M2X library packed. This sample project can be used to post values to a stream in a feed.
+* `M2XCypressPSoC`: A sample project with M2X library packed. This sample project can be used to post values to a stream in a device.
 
 Because the M2X library depends on the generated code from the hardware configuration in the PSoC Creator, we now pack the library in the sample project. In the future, the M2X library files might be split into their own project.
 
-In the `main.cpp` file, you'll need to configure your AT&amp;T M2X master key, the feed and stream to use in order to run the example. When you are done with the changes, you are ready to build and run the example.
+In the `main.cpp` file, you'll need to configure your AT&amp;T M2X master key, the device and stream to use in order to run the example. When you are done with the changes, you are ready to build and run the example.
 
 Right click on `M2XCypressPSoC` project, and select `Build M2XCypressPSoC` — the PSoC Creator will build all three (3) projects, because `M2XCypressPSoC` depends on the other two. When the building process is completed, you can connect your PSoC 4 board using a USB cable, and select `Debug` to run the example on your board.
 
