@@ -11,7 +11,7 @@ int M2XStreamClient::updateStreamValue(const char* deviceId, const char* streamN
     DBGLN("%s", "Connected to M2X server!");
     writePutHeader(deviceId, streamName,
                    //  for {"value": and }
-                   _null_print.print(value) + 10);
+                   _null_print.print(value) + 12);
     _client->print("{\"value\":\"");
     _client->print(value);
     _client->print("\"}");
