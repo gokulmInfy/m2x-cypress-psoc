@@ -6,7 +6,7 @@
 #define CYPRESS_PLATFORM
 
 #ifdef CYPRESS_PLATFORM
-#define USER_AGENT "User-Agent: M2X Cypress Client/2.0.0"
+#define USER_AGENT "User-Agent: M2X Cypress Client/2.0.2"
 #endif
 
 #include "Client.h"
