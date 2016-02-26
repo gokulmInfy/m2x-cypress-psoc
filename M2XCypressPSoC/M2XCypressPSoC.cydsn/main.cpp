@@ -8,7 +8,7 @@ extern "C" {
 
 #include <stdlib.h>
 
-#include "m2x/Client.h"
+#define CYPRESS_PLATFORM
 #include "m2x/M2XStreamClient.h"
 
 char feedId[] = "<feed id>"; // Feed you want to push to
