@@ -384,6 +384,9 @@ private:
 #endif  /* M2X_ENABLE_READER */
 };
 
+static inline int m2x_fill_iso8601_timestamp(int32_t seconds, int32_t milli,
+                                             char* buffer, int* length);
+
 #ifndef M2X_DISABLE_TIME_SERVICE
 // A ISO8601 timestamp generation service for M2X.
 // It uses the Time API provided by the M2X server to initialize
@@ -999,9 +1002,6 @@ void M2XStreamClient::close() {
 }
 
 #ifndef M2X_DISABLE_TIME_SERVICE
-static inline int fill_iso8601_timestamp(int32_t seconds, int32_t milli,
-                                         char* buffer, int* length);
-
 TimeService::TimeService(M2XStreamClient* client) : _client(client) {
 }
 
@@ -1042,9 +1042,10 @@ int TimeService::getTimestamp(char* buffer, int* length) {
   uint32_t diff = now - _local_last_milli;
   _local_last_milli = now;
   _server_timestamp += (int32_t) (diff / 1000); // Milliseconds to seconds
-  return fill_iso8601_timestamp(_server_timestamp, (int32_t) (diff % 1000),
-                                buffer, length);
+  return m2x_fill_iso8601_timestamp(_server_timestamp, (int32_t) (diff % 1000),
+                                    buffer, length);
 }
+#endif  /* M2X_DISABLE_TIME_SERVICE */
 
 #define SIZE_ISO_8601 25
 static inline bool is_leap_year(int16_t y) {
@@ -1057,8 +1058,8 @@ static inline int32_t days_in_year(int16_t y) {
 }
 static const uint8_t MONTH_DAYS[]={31,28,31,30,31,30,31,31,30,31,30,31};
 
-static inline int fill_iso8601_timestamp(int32_t timestamp, int32_t milli,
-                                         char* buffer, int* length) {
+static inline int m2x_fill_iso8601_timestamp(int32_t timestamp, int32_t milli,
+                                             char* buffer, int* length) {
   int16_t year;
   int8_t month, month_length;
   int32_t day;
@@ -1138,7 +1139,6 @@ static inline int fill_iso8601_timestamp(int32_t timestamp, int32_t milli,
   *length = i;
   return E_OK;
 }
-#endif  /* M2X_DISABLE_TIME_SERVICE */
 
 /* Reader functions */
 #ifdef M2X_ENABLE_READER
